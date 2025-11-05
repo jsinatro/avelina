@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Avelina de Sousa - Uma História de Família</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #333333;
+            --light-gray: #666666;
+            --lighter-gray: #e0e0e0;
+            --white: #ffffff;
+            --accent: #8c8c8c;
+
+            /* NOVAS: Cores de Gênero */
+            --male-bg: #f0f8ff;
+            --male-border: #add8e6;
+            --female-bg: #fff0f5;
+            --female-border: #ffc0cb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair+Display', serif;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background-color: var(--black);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navegação */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid var(--lighter-gray);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: var(--black);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: var(--black);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .logo:hover:after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--black);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--black);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: var(--black);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="white"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23e0e0e0" stroke-width="0.5"/></svg>');
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            position: relative;
+            display: inline-block;
+        }
+
+        #hero h1:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--black);
+            bottom: -10px;
+            left: 0;
+        }
+
+        #hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-family: 'Crimson Text', serif;
+        }
+
+        #hero .author {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.9rem 1.8rem;
+            border: none;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 0.5rem;
+            border: 1px solid var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--black);
+            color: var(--black);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        /* Dedicatória */
+        #dedicatoria {
+            background-color: var(--lighter-gray);
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        #dedicatoria:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--medium-gray), transparent);
+        }
+
+        #dedicatoria p {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+            color: var(--medium-gray);
+            font-family: 'Crimson Text', serif;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        #dedicatoria p:before, #dedicatoria p:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--light-gray);
+            position: absolute;
+        }
+
+        #dedicatoria p:before {
+            top: 0;
+            left: -1rem;
+        }
+
+        #dedicatoria p:after {
+            bottom: 0;
+            right: -1rem;
+        }
+
+        /* Sobre o Livro */
+        #sobre-livro {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .livro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .livro-imagem {
+            position: relative;
+            border: 1px solid var(--lighter-gray);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.5s;
+        }
+
+        .livro-imagem:hover {
+            transform: translateY(-10px);
+        }
+
+        .livro-imagem:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--black);
+            transform: translate(10px, 10px);
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .livro-imagem:hover:before {
+            transform: translate(5px, 5px);
+        }
+
+        .livro-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .livro-imagem:hover img {
+            transform: scale(1.05);
+        }
+
+        .livro-texto {
+            padding: 1rem;
+        }
+
+        .livro-texto p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .quote {
+            font-style: italic;
+            border-left: 3px solid var(--black);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            color: var(--medium-gray);
+        }
+
+        /* A História */
+        #historia {
+            background-color: var(--lighter-gray);
+            padding: 5rem 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--black);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: var(--white);
+            border: 2px solid var(--black);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid var(--lighter-gray);
+            transition: transform 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            font-size: 1.1rem;
+        }
+
+        /* Personagens */
+        #personagens {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .personagens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .personagem-card {
+            background-color: var(--white);
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid var(--lighter-gray);
+            position: relative;
+        }
+
+        .personagem-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--black);
+            transform: translate(5px, 5px);
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .personagem-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .personagem-card:hover:before {
+            transform: translate(2px, 2px);
+        }
+
+        .personagem-img {
+            width: 100%;
+            height: 250px;
+            background-color: var(--lighter-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--medium-gray);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .personagem-img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.1));
+        }
+
+        .personagem-info {
+            padding: 1.5rem;
+        }
+
+        .personagem-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .personagem-info h3:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            background-color: var(--black);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .personagem-card:hover .personagem-info h3:after {
+            width: 100%;
+        }
+
+        .personagem-info p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--light-gray);
+        }
+
+        /* Galeria */
+        #galeria {
+            background-color: var(--lighter-gray);
+            padding: 5rem 2rem;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .galeria-item {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+            transition: transform 0.3s;
+            border: 1px solid var(--lighter-gray);
+            background-color: var(--white);
+        }
+
+        .galeria-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--black);
+            transform: translate(5px, 5px);
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.03);
+        }
+
+        .galeria-item:hover:before {
+            transform: translate(2px, 2px);
+        }
+
+        .galeria-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            transform: translateY(0);
+        }
+
+        .galeria-item:hover .galeria-img {
+            transform: scale(1.1);
+        }
+
+        /* Árvore Genealógica (Estilos movidos para dentro do modal) */
+
+        .conteudo-arvore {
+            display: none;
+            padding-top: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .conteudo-arvore.active {
+            display: block;
+        }
+
+        .opcao-btn-arvore {
+            background: none;
+            border: 1px solid var(--black);
+            color: var(--black);
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border-radius: 0;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opcao-btn-arvore:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            transition: all 0.5s;
+        }
+
+        .opcao-btn-arvore:hover:before {
+            left: 100%;
+        }
+
+        .opcao-btn-arvore.active {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        /* --- INÍCIO: CSS da Árvore de Descendência (com Zoom/Pan) --- */
+
+        /* Controles de Zoom */
+        .genealogy-controls {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+        .genealogy-controls button {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0;
+            text-align: center;
+        }
+        .genealogy-controls button:hover {
+            background-color: var(--medium-gray);
+        }
+
+        /* Viewport da Árvore */
+        .genealogy-tree {
+            text-align: center;
+            overflow: hidden; /* IMPORTANTE: Panzoom precisa disso */
+            border: 1px solid var(--lighter-gray);
+            min-height: 450px; /* Ajustado para caber no modal */
+            cursor: grab;
+            background-color: var(--white); /* Fundo da viewport */
+        }
+        .genealogy-tree:active {
+            cursor: grabbing;
+        }
+
+        /* Conteúdo da Árvore (o <ul>) */
+        .genealogy-tree ul {
+            padding-top: 20px;
+            position: relative;
+            transition: all 0.5s;
+            display: inline-flex;
+        }
+        .genealogy-tree li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            list-style-type: none;
+            position: relative;
+            padding: 20px 5px 0 5px;
+            transition: all 0.5s;
+            white-space: nowrap;
+        }
+        .genealogy-tree li::before, .genealogy-tree li::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 50%;
+            border-top: 2px solid var(--accent);
+            width: 50%;
+            height: 20px;
+        }
+        .genealogy-tree li::after {
+            right: auto;
+            left: 50%;
+            border-left: 2px solid var(--accent);
+        }
+        .genealogy-tree li:only-child::after, .genealogy-tree li:only-child::before {
+            display: none;
+        }
+        .genealogy-tree li:only-child {
+            padding-top: 0;
+        }
+        .genealogy-tree li:first-child::before, .genealogy-tree li:last-child::after {
+            border: 0 none;
+        }
+        .genealogy-tree li:last-child::before {
+            border-right: 2px solid var(--accent);
+            border-radius: 0 5px 0 0;
+        }
+        .genealogy-tree li:first-child::after {
+            border-radius: 5px 0 0 0;
+        }
+        .genealogy-tree ul ul::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            border-left: 2px solid var(--accent);
+            width: 0;
+            height: 20px;
+        }
+
+        /* NOVO: Wrapper para conjuges */
+        .node-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .node-connector {
+            padding: 0 4px;
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .genealogy-tree li span {
+            border: 2px solid var(--lighter-gray); /* Borda mais grossa */
+            padding: 8px 12px;
+            display: inline-block;
+            background-color: var(--white);
+            border-radius: 0;
+            color: var(--dark-gray);
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            min-width: 160px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.03);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* NOVO: Estilos de Gênero */
+        .genealogy-tree li span.female {
+            background-color: var(--female-bg);
+            border-color: var(--female-border);
+        }
+        .genealogy-tree li span.male {
+            background-color: var(--male-bg);
+            border-color: var(--male-border);
+        }
+
+        .genealogy-tree li span.highlight {
+            font-weight: 600;
+            border-width: 2px;
+        }
+        /* Destaque da Avelina (linhagem principal) */
+        .genealogy-tree li span.highlight.female {
+            background-color: #ffc0cb; /* Cor mais forte para a matriarca */
+            border-color: #ffc0cb;
+            color: var(--black);
+        }
+        .genealogy-tree li span.highlight.male {
+            background-color: #add8e6; /* Cor mais forte para o patriarca */
+            border-color: #add8e6;
+            color: var(--black);
+        }
+
+
+        .genealogy-tree li span:hover {
+            cursor: default;
+        }
+        .genealogy-tree li span small {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            font-family: 'Inter', sans-serif;
+            margin-top: 4px;
+        }
+
+        /* --- FIM: CSS da Árvore de Descendência --- */
+
+        /* Lista de Ascendência */
+        .genealogy-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 2px solid var(--lighter-gray);
+            padding-left: 1.5rem;
+            background-color: var(--white);
+            padding: 1.5rem;
+        }
+        .genealogy-list ul {
+            list-style: none;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .genealogy-list ul li {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+        .genealogy-list ul li::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: -2rem;
+            width: 1.5rem;
+            height: 2px;
+            background-color: var(--lighter-gray);
+        }
+        .genealogy-list span {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            background-color: var(--white);
+            padding: 4px 8px;
+            border-radius: 0;
+            border: 2px solid var(--lighter-gray);
+            display: inline-block;
+        }
+
+        /* NOVO: Cores de Gênero para Lista de Ascendência */
+        .genealogy-list span.female {
+            background-color: var(--female-bg);
+            border-color: var(--female-border);
+        }
+        .genealogy-list span.male {
+            background-color: var(--male-bg);
+            border-color: var(--male-border);
+        }
+        .genealogy-list span.highlight {
+            font-weight: 600;
+        }
+        .genealogy-list span.highlight.female {
+            background-color: #ffc0cb;
+            border-color: #ffc0cb;
+        }
+
+
+        /* Livro Digital */
+        #livro-digital {
+            background-color: var(--lighter-gray);
+            padding: 5rem 2rem;
+        }
+
+        .livro-opcoes {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .opcao-btn {
+            background: none;
+            border: 1px solid var(--black);
+            color: var(--black);
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            border-radius: 0;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .opcao-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+            transition: all 0.5s;
+        }
+
+        .opcao-btn:hover:before {
+            left: 100%;
+        }
+
+        .opcao-btn.active {
+            background-color: var(--black);
+            color: var(--white);
+        }
+
+        .conteudo-livro {
+            display: none;
+        }
+
+        .conteudo-livro.active {
+            display: block;
+        }
+
+        /* Modal Flipbook (e Modal Genealogia) */
+        .flipbook-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .flipbook-modal.active {
+            display: flex;
+            opacity: 1;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flipbook-container {
+            width: 90%;
+            height: 90%;
+            background-color: var(--white);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .flipbook-header {
+            padding: 1rem 2rem;
+            background-color: var(--black);
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flipbook-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .close-flipbook {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .close-flipbook:hover {
+            color: var(--lighter-gray);
+        }
+
+        .flipbook-content {
+            flex: 1;
+            overflow: auto;
+            padding: 2rem;
+            position: relative;
+            background-color: var(--lighter-gray); /* Fundo da área de conteúdo do modal */
+        }
+
+        .flipbook-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            display: none;
+            background-color: var(--white); /* Página do livro */
+        }
+
+        .flipbook-page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flipbook-page h3 {
+            border-bottom: 1px solid var(--lighter-gray);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .flipbook-controls {
+            padding: 1rem 2rem;
+            background-color: var(--lighter-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-info {
+            font-weight: 500;
+        }
+
+        .flipbook-nav {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--medium-gray);
+        }
+
+        .nav-btn:disabled {
+            background-color: var(--light-gray);
+            cursor: not-allowed;
+        }
+
+        /* Vídeos */
+        #videos {
+            background-color: var(--lighter-gray);
+            padding: 5rem 2rem;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            background-color: var(--white);
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid var(--lighter-gray);
+            position: relative;
+        }
+
+        .video-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid var(--black);
+            transform: translate(5px, 5px);
+            z-index: -1;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-card:hover:before {
+            transform: translate(2px, 2px);
+        }
+
+        .video-thumbnail {
+            width: 100%;
+            height: 180px;
+            background-color: var(--medium-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 3.5rem;
+            position: relative;
+        }
+
+        .video-thumbnail:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .video-info p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--light-gray);
+        }
+
+        /* Índice Onomástico */
+        #indice {
+            background-color: var(--white);
+            padding: 5rem 2rem;
+        }
+
+        .indice-container {
+            background-color: var(--white);
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--lighter-gray);
+            position: relative;
+        }
+
+        .indice-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--medium-gray), transparent);
+        }
+
+        #indice-busca {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--lighter-gray);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border 0.3s;
+        }
+
+        #indice-busca:focus {
+            border-color: var(--black);
+            outline: none;
+        }
+
+        .indice-lista {
+            column-count: 3;
+            column-gap: 2rem;
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 1rem;
+            border: 1px solid var(--lighter-gray);
+        }
+
+        .indice-item {
+            margin-bottom: 0.8rem;
+            break-inside: avoid;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .indice-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 0;
+            height: 1px;
+            background-color: var(--black);
+            transition: width 0.3s;
+        }
+
+        .indice-item:hover {
+            background-color: var(--lighter-gray);
+            padding-left: 1rem;
+        }
+
+        .indice-item:hover:before {
+            width: 5px;
+        }
+
+        .indice-detalhes {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--lighter-gray);
+            border: 1px solid var(--lighter-gray);
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .indice-detalhes.active {
+            display: block;
+        }
+
+        .indice-detalhes h3 {
+            border-bottom: 1px solid var(--medium-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--lighter-gray), transparent);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: var(--lighter-gray);
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .livro-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+            }
+
+            .left, .right {
+                left: 0;
+            }
+
+            .indice-lista {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                right: 0;
+                height: 100vh;
+                top: 0;
+                background-color: var(--white);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 70%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
+                z-index: 1;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                transform: translateX(0%);
+            }
+
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 2;
+            }
+
+            .hamburger.active .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active .line2 {
+                opacity: 0;
+            }
+
+            .hamburger.active .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .personagens-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .galeria-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .indice-lista {
+                column-count: 1;
+            }
+
+            .flipbook-container {
+                width: 95%;
+                height: 95%;
+            }
+
+            .flipbook-content {
+                padding: 1rem;
+            }
+
+            .flipbook-page {
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            #hero h1 {
+                font-size: 2.3rem;
+            }
+
+            #hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.3rem;
+                font-size: 0.9rem;
+            }
+
+            .personagens-grid, .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Maria Avelina</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#sobre-livro">O Livro</a></li>
+                <li><a href="#historia">A História</a></li>
+                <li><a href="#personagens">Personagens</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#" id="open-genealogy">Genealogia</a></li>
+                <li><a href="#livro-digital">Leia Online</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#indice">Índice</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>MARIA AVELINA DE SOUSA</h1>
+            <p class="subtitle">da família Sousa, do município de Barbalha</p>
+            <p class="author">João Sinatro (neto de Avelina)</p>
+            <div class="btn-container">
+                <a href="#livro-digital" class="btn">Ler o Livro</a>
+                <a href="#sobre-livro" class="btn btn-outline">Conheça a História</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="dedicatoria">
+        <div class="container">
+            <p>Aos meus avós,<br><strong>Avelina</strong><br>e<br><strong>Abel</strong> — in memoriam</p>
+        </div>
+    </section>
+
+    <section id="sobre-livro">
+        <div class="container">
+            <h2>O Livro</h2>
+            <div class="livro-content">
+                <div class="livro-imagem">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Livro Maria Avelina de Sousa">
+                </div>
+                <div class="livro-texto">
+                    <p class="quote">"Toda família tem uma história. A nossa tem uma guardiã."</p>
+                    <p>Esta obra é um presente de 90 anos para Maria Avelina de Sousa, uma homenagem à matriarca que se tornou o coração de uma vasta família.</p>
+                    <p>Mais do que um livro, é um legado de amor, fé e tradição que atravessa gerações, desde os pioneiros de Barbalha até os dias atuais.</p>
+                    <p>Descubra as raízes profundas desta família e as histórias que moldaram seu caráter único.</p>
+                    <a href="#livro-digital" class="btn">Ler Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia">
+        <div class="container">
+            <h2>A História da Família</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>1840</h3>
+                        <p>Nascimento do Capitão Reinaldo Alves de Sousa, patriarca da família, seis anos antes da fundação oficial de Barbalha.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>1864</h3>
+                        <p>Casamento do Capitão Reinaldo com Sebastiana Maria da Conceição no Sítio Caldas, formando a base da família Sousa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>1935</h3>
+                        <p>Nascimento de Maria Avelina de Sousa em 10 de novembro, em Barbalha, filha de João de Sousa Lima e Maria do Carmo de Sousa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>1956</h3>
+                        <p>Casamento de Avelina com Raimundo Severino de Sousa (Abel), em uma cerimônia dupla com sua irmã Bil e o irmão de Abel, Geraldo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2025</h3>
+                        <p>Celebração dos 90 anos de Maria Avelina, matriarca que viu sua família crescer com 8 filhos, 15 netos, 13 bisnetos e 1 tataraneta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="personagens">
+        <div class="container">
+            <h2>Personagens da História</h2>
+            <div class="personagens-grid">
+                <div class="personagem-card">
+                    <div class="personagem-img">👑</div>
+                    <div class="personagem-info">
+                        <h3>Capitão Reinaldo</h3>
+                        <p>Patriarca (1840-1910)</p>
+                        <p>Líder e fundador da linhagem Sousa em Barbalha.</p>
+                    </div>
+                </div>
+                <div class="personagem-card">
+                    <div class="personagem-img">👵</div>
+                    <div class="personagem-info">
+                        <h3>Maria Avelina</h3>
+                        <p>Matriarca (1935-Presente)</p>
+                        <p>Coração da família, celebrando 90 anos de vida.</p>
+                    </div>
+                </div>
+                <div class="personagem-card">
+                    <div class="personagem-img">👨</div>
+                    <div class="personagem-info">
+                        <h3>Abel</h3>
+                        <p>Esposo de Avelina</p>
+                        <p>Companheiro por 60 anos, falecido em 2016.</p>
+                    </div>
+                </div>
+                <div class="personagem-card">
+                    <div class="personagem-img">👩</div>
+                    <div class="personagem-info">
+                        <h3>Mãe Mimosa</h3>
+                        <p>Avó de Avelina (1892-1942)</p>
+                        <p>Conhecida pelo apelido carinhoso que refletia a saudade que deixou.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+            <h2>Galeria da Família</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Família Sousa anos 50" class="galeria-img">
+                    <div class="galeria-overlay">
+                        <h3>Família Sousa - Anos 50</h3>
+                        <p>Primeiras gerações em Barbalha</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Casamento de Avelina e Abel" class="galeria-img">
+                    <div class="galeria-overlay">
+                        <h3>Casamento de Avelina e Abel</h3>
+                        <p>28 de novembro de 1956</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1551828343-8d4c0086b624?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Reunião familiar" class="galeria-img">
+                    <div class="galeria-overlay">
+                        <h3>Reunião Familiar</h3>
+                        <p>Celebração dos 80 anos de Avelina</p>
+                    </div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1578083320232-43c079f35a21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbalha antiga" class="galeria-img">
+                    <div class="galeria-overlay">
+                        <h3>Barbalha Antiga</h3>
+                        <p>Raízes da família Sousa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="livro-digital">
+        <div class="container">
+            <h2>Leia o Livro</h2>
+            <div class="livro-opcoes">
+                <button class="opcao-btn active" id="abrir-flipbook">Flipbook</button>
+                <button class="opcao-btn" data-target="leitura-online">Leitura Online</button>
+                <button class="opcao-btn" data-target="download">Download</button>
+            </div>
+
+            <div id="leitura-online" class="conteudo-livro">
+                <div style="text-align: center; padding: 2rem;">
+                    <h3>Leitura por Capítulos</h3>
+                    <p>Em breve: Navegação por todos os capítulos do livro</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn">Capítulo I - Maria Avelina</a>
+                        <a href="#" class="btn">Capítulo II - Os Bisavós</a>
+                        <a href="#" class="btn">Capítulo III - Os Avós</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="download" class="conteudo-livro">
+                <div style="text-align: center; padding: 2rem;">
+                    <h3>Baixe o Livro Completo</h3>
+                    <p>Disponível em diversos formatos para leitura offline</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn">PDF (12MB)</a>
+                        <a href="#" class="btn">EPUB (8MB)</a>
+                        <a href="#" class="btn">MOBI (9MB)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="container">
+            <h2>Vídeos Narrados</h2>
+            <p>Ouça a emocionante narração de cada capítulo do livro</p>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <h3>Capítulo I - MARIA AVELINA DE SOUSA</h3>
+                        <p>Narração: João Sinatro</p>
+                        <p>Duração: 15:32</p>
+                        <button class="btn" style="margin-top: 0.5rem;">Assistir</button>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <h3>Capítulo II - OS BISAVÔS</h3>
+                        <p>Narração: João Sinatro</p>
+                        <p>Duração: 22:15</p>
+                        <button class="btn" style="margin-top: 0.5rem;">Assistir</button>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">▶️</div>
+                    <div class="video-info">
+                        <h3>Capítulo III - OS AVÔS</h3>
+                        <p>Narração: João Sinatro</p>
+                        <p>Duração: 18:47</p>
+                        <button class="btn" style="margin-top: 0.5rem;">Assistir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="indice">
+        <div class="container">
+            <h2>Índice Onomástico</h2>
+            <div class="indice-container">
+                <p>Encontre todas as pessoas mencionadas no livro</p>
+                <input type="text" id="indice-busca" placeholder="Buscar por nome...">
+                <div class="indice-lista">
+                    <div class="indice-item" data-person="avelina">Avelina, Maria - Página 9</div>
+                    <div class="indice-item" data-person="abel">Abel (Raimundo Severino de Sousa) - Página 51</div>
+                    <div class="indice-item" data-person="reinaldo">Reinaldo, Capitão - Página 18</div>
+                    <div class="indice-item" data-person="sebastiana">Sebastiana, Maria - Página 18</div>
+                    <div class="indice-item" data-person="joao">João, Pai - Página 38</div>
+                    <div class="indice-item" data-person="carmo">Carmo, Maria do - Página 38</div>
+                    <div class="indice-item" data-person="severino">Severo Alves de Sousa - Página 21</div>
+                    <div class="indice-item" data-person="raimunda">Maria Raimunda da Conceição - Página 22</div>
+                    <div class="indice-item" data-person="raimundo">Raimundo Alves de Sousa - Página 28</div>
+                    <div class="indice-item" data-person="ana">Ana Vidal de Lima - Página 28</div>
+                    <div class="indice-item" data-person="joao-caldas">João da Silva Caldas - Página 30</div>
+                    <div class="indice-item" data-person="mimosa">Mãe Mimosa (Maria Alves de Sousa) - Página 31</div>
+                    <div class="indice-item" data-person="francisco">Francisco de Assis de Sousa - Página 39</div>
+                    <div class="indice-item" data-person="bil">Maria das Dores de Sousa (Bil) - Página 40</div>
+                    <div class="indice-item" data-person="lourdes">Maria de Lourdes de Sousa - Página 41</div>
+                    <div class="indice-item" data-person="zuca">José de Sousa Lima Sobrinho (Zuca) - Página 42</div>
+                    <div class="indice-item" data-person="kariri">Antônio de Sousa Lima (Kariri) - Página 43</div>
+                    <div class="indice-item" data-person="mariana">Mariana de Sousa Lima - Página 43</div>
+                    <div class="indice-item" data-person="vicente">Vicente Paulo de Sousa - Página 44</div>
+                    <div class="indice-item" data-person="naro">Raimundo Apolinário de Sousa (Naro) - Página 44</div>
+                    <div class="indice-item" data-person="rosario">Maria do Rosário de Sousa - Página 58</div>
+                    <div class="indice-item" data-person="sinatro">João Sinatro de Sousa - Página 58</div>
+                    <div class="indice-item" data-person="sabrina">Sabrina Maria de Sousa - Página 60</div>
+                    <div class="indice-item" data-person="zilton">José Zilton de Sousa (Dedé/Zé rico) - Página 64</div>
+                    <div class="indice-item" data-person="antonio-severino">António Severino de Sousa - Página 66</div>
+                    <div class="indice-item" data-person="socorro">Maria do Socorro de Sousa - Página 67</div>
+                    <div class="indice-item" data-person="assis">Francisco de Assis de Sousa (Assis) - Página 69</div>
+                    <div class="indice-item" data-person="sousa">Severino de Sousa Neto (Sousa) - Página 71</div>
+                    <div class="indice-item" data-person="batista">João Batista de Sousa - Página 73</div>
+                    <div class="indice-item" data-person="vicente-severino">Vicente Severino de Sousa - Página 75</div>
+                </div>
+
+                <div class="indice-detalhes" id="indice-detalhes">
+                    <h3 id="detalhes-nome">Nome da Pessoa</h3>
+                    <div id="detalhes-conteudo">
+                        <p>Informações detalhadas sobre a pessoa selecionada...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Maria Avelina de Sousa</div>
+            <p class="footer-text">Uma homenagem aos 90 anos da nossa querida matriarca</p>
+            <p>© 2025 - Todos os direitos reservados à família Sousa</p>
+        </div>
+    </footer>
+
+
+    <div class="flipbook-modal" id="flipbook-modal">
+        <div class="flipbook-container">
+            <div class="flipbook-header">
+                <div class="flipbook-title">Maria Avelina de Sousa</div>
+                <button class="close-flipbook" id="close-flipbook">&times;</button>
+            </div>
+            <div class="flipbook-content">
+                <div class="flipbook-page active" id="page-1">
+                    <h3>Capítulo I - MARIA AVELINA DE SOUSA</h3>
+                    <p>O sol de Barbalha tem uma maneira especial de anunciar os começos, e naquele 10 de novembro de 1935, um domingo de primavera, ele parecia cumprir um destino. A luz dourada que se derramava sobre os verdes canaviais não iluminava apenas a terra; ela aquecia as raízes profundas de uma família de pioneiros e capitães, preparando o solo para a chegada de Maria Avelina de Sousa.</p>
+                    <p>Enquanto o Brasil se moldava sob o governo de Getúlio Vargas e o mundo católico ouvia as palavras do Papa Pio XI, a vida em Barbalha seguia seu próprio ritmo. Era uma cidade pequena, abraçada pelas plantações de cana-de-açúcar, onde a fé em Santo Antônio era tão presente quanto o calor do sol.</p>
+                    <p>Foi nesse cenário de força silenciosa que Avelina abriu os olhos para o mundo, nos braços de seus pais, João de Sousa Lima, o Pai João, e Maria do Carmo de Sousa.</p>
+                    <p>A bênção veio rápida. No mesmo dia em que nasceu, foi levada à Capela do Bom Jesus do Caldas e batizada pelo Padre José Correia Lima. Ali, sob o olhar de seus padrinhos, Joaquim Francisco de Sá e sua tia querida, Idelzuith Alves da Silva, a Tia Dé, começava a história da menina que se tornaria o coração de uma vasta família.</p>
+                </div>
+                <div class="flipbook-page" id="page-2">
+                    <h3>Capítulo I - MARIA AVELINA DE SOUSA (Continuação)</h3>
+                    <p>Sua vida, como as raízes da cana que a cercavam, cresceria forte e doce, um testemunho de fé, trabalho e amor incondicional.</p>
+                    <p>Mas para compreender a mulher em que Avelina se tornaria, é preciso escutar os ecos do passado, muito antes daquele domingo ensolarado. A verdadeira origem de sua força não está em seu nascimento, mas na confluência de rios de sangue e coragem que correm em suas veias. Ela é uma Sousa, mas também é o legado vivo dos Alves, Caldas, Cavalcante, Lima, Silva, Vidal e Vieira.</p>
+                    <p>Mais do que sobrenomes, são capítulos de uma saga que, mesmo com páginas amareladas pelo tempo, ainda respiram dentro dela.</p>
+                    <p>Essa história nos leva a uma Barbalha ainda em formação, no Brasil Imperial, onde os fundadores desta linhagem fincaram suas raízes. Suas vidas se entrelaçaram de tal forma com o destino da cidade que se torna difícil saber onde termina a história da família e onde começa a da própria terra, forjando um clã conhecido por sua fé e sua forte presença.</p>
+                </div>
+                <div class="flipbook-page" id="page-3">
+                    <h3>Capítulo II - OS BISAVÔS</h3>
+                    <p>Toda grande árvore precisa de raízes profundas, e as de Avelina se aninham na terra de uma Barbalha do século XIX, um tempo de pioneiros e patriarcas. É aqui que encontramos os casais de bisavós, os pilares sobre os quais nossa família foi erguida. Suas histórias não são apenas o passado; são o alicerce da mulher que Avelina se tornaria.</p>
+                    <p>A história de nossa linhagem começa com uma figura de imenso respeito: Reinaldo Alves de Sousa (bisavó de Avelina). Nascido em 7 de maio de 1840, filho de José Alves de Sousa e Maria Moreira de Castro, ele chegou a um mundo onde um título como "Capitão" não era apenas uma honraria, mas um símbolo de autoridade e liderança na sociedade barbalhense.</p>
+                    <p>Seu batismo, em 19 de julho daquele ano, já prenunciava sua importância, tendo como padrinhos Alexandre Moreira de Carvalho e Joaquina Francisca, figuras que refletiam a sólida posição da família.</p>
+                    <p>Seu destino se uniria primeiro ao de Sebastiana Maria da Conceição (bisavó de Avelina). Nascida por volta de 1846, filha de Saturnino José de Melo e Joana Bezerra de Melo. No dia 2 de junho de 1864, no Sítio Caldas, Reinaldo, com 24 anos, e Sebastiana, com 18, firmaram uma aliança familiar sólida.</p>
+                </div>
+                <div class="flipbook-page" id="page-4">
+                    <h3>Capítulo II - OS BISAVÔS (Continuação)</h3>
+                    <p>A cerimônia, abençoada pelo Padre João Francisco da Costa Nogueira, foi testemunhada por duas personalidades ilustres: Rodrião de Sá Barreto e Luiz Coelho Sampaio. Desta união nasceram seis filhos:</p>
+                    <ul>
+                        <li>Lauro Alves de Sousa</li>
+                        <li>Severo Alves de Sousa (1865 - 1901) - Bisavô de Avelina</li>
+                        <li>Raymundo Alves de Sousa (1866 - ?) - Avô de Avelina</li>
+                        <li>Maria Sebastiana da Conceição (1869 - 1947)</li>
+                        <li>Joaquim Alves de Sousa (1873 - 1941)</li>
+                        <li>Sebastião Alves de Sousa (1874 - ?)</li>
+                    </ul>
+                    <p>Contudo, a história deste ramo é marcada por uma tragédia profunda. Em 15 de fevereiro de 1874, com apenas 27 anos, Sebastiana faleceu em decorrência do parto de seu último filho, deixando para trás seis crianças órfãs e uma ausência que marcaria a família para sempre.</p>
+                    <p>Apesar da perda, o Capitão Reinaldo demonstrou uma resiliência extraordinária. Reconstruiu sua vida com Silvana Gonçalves de Sousa, sua segunda esposa, com quem teve um filho que se tornaria uma figura de grande destaque e orgulho para a família: Monsenhor Francisco Silvano de Sousa (1879 – 1968).</p>
+                </div>
+            </div>
+            <div class="flipbook-controls">
+                <div class="page-info">Página <span id="current-page">1</span> de <span id="total-pages">4</span></div>
+                <div class="flipbook-nav">
+                    <button class="nav-btn" id="prev-page">Anterior</button>
+                    <button class="nav-btn" id="next-page">Próxima</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flipbook-modal" id="genealogy-modal">
+        <div class="flipbook-container">
+            <div class="flipbook-header">
+                <div class="flipbook-title">Árvore Genealógica</div>
+                <button class="close-flipbook" id="close-genealogy">&times;</button>
+            </div>
+            <div class="flipbook-content" id="genealogy-content-area">
+                <div class="container" style="max-width: none; padding: 0;">
+                    <h2 style="color: var(--black);">Raízes e Frutos</h2>
+                    <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+                        Explore a linha direta de ascendência e descendência de Maria Avelina.
+                    </p>
+
+                    <div class="livro-opcoes" style="justify-content: center;">
+                        <button class="opcao-btn-arvore active" data-target="descendencia">Descendência (Zoom/Arrastar)</button>
+                        <button class="opcao-btn-arvore" data-target="ascendencia">Ascendência (Lista)</button>
+                    </div>
+
+                    <div id="descendencia" class="conteudo-arvore active">
+
+                        <div class="genealogy-controls">
+                            <button id="zoom-in">+</button>
+                            <button id="zoom-out">-</button>
+                            <button id="reset-pan">Reset</button>
+                        </div>
+                        <p style="text-align: center; font-size: 0.9rem; color: var(--light-gray); margin-bottom: 1.5rem;">
+                            Use a rodinha do mouse para zoom e clique e arraste para mover.
+                        </p>
+
+                        <div class="genealogy-tree">
+                            <ul id="tree-content">
+                                <li>
+                                    <div class="node-wrapper">
+                                        <span class="highlight female">Maria Avelina</span>
+                                        <span class="node-connector">+</span>
+                                        <span class="highlight male">Abel</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="female">Maria do Rosário</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="male">João Alves</span>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="male">João Sinatro</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="female">Maria Bianca</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="female">Miyuki<small>Bisneta</small></span></li>
+                                                        <li><span class="female">Harumi<small>Bisneta</small></span></li>
+                                                        <li><span class="female">Akemi<small>Bisneta</small></span></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li>
+                                                            <div class="node-wrapper">
+                                                                <span class="female">Sabrina Maria</span>
+                                                                <span class="node-connector">+</span>
+                                                                <span class="male">Gilmar B. Dias</span>
+                                                            </div>
+                                                            <ul>
+                                                                <li>
+                                                                    <div class="node-wrapper">
+                                                                        <span class="female">Jenifer de Sousa Dias</span>
+                                                                        <span class="node-connector">+</span>
+                                                                        <span class="male">Daniel Vinícius</span>
+                                                                    </div>
+                                                                    <ul>
+                                                                        <li><span class="female">Stella Maria<small>Tataraneta</small></span></li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <div class="node-wrapper">
+                                                                <span class="female">Sabrina Maria</span>
+                                                                <span class="node-connector">+</span>
+                                                                <span class="male">Ricardo Alex de Jesus</span>
+                                                            </div>
+                                                            <ul>
+                                                                <li><span class="female">Maria Eduarda<small>Bisneta</small></span></li>
+                                                                <li><span class="male">Eduardo Estevan<small>Bisneto</small></span></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="male">José Zilton</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="female">Lúcia Maria</span>
+                                            </div>
+                                            <ul>
+                                                <li><span class="male">Cícero Tiago<small>Neto</small></span></li>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="male">Paulo Jeferson</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="female">Ana Aparecida</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="female">Laura Beatriz<small>Bisneta</small></span></li>
+                                                        <li><span class="female">Ana Lívia<small>Bisneta</small></span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <span class="male">Antônio Severino<small>Filho</small></span>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="female">Maria do Socorro</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="male">Cícero Nascimento</span>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="female">Maria Rayane</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="male">Francisco Altamir</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="male">João Miguel<small>Bisneto</small></span></li>
+                                                        <li><span class="male">Emanuel Tobias<small>Bisneto</small></span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="male">Francisco de Assis</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="female">Maria Vilma</span>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="female">Maria Thayná</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="male">Saulo de Tarso</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="female">Maria Sophia<small>Bisneta</small></span></li>
+                                                    </ul>
+                                                </li>
+                                                <li><span class="male">João Tailan<small>Neto</small></span></li>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="female">Thifany Santos</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="male">José Leandro</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="male">Jonh Noah<small>Bisneto</small></span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="male">Severino Neto</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="female">Fátima Nascimento</span>
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="female">Stefane da Silva</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="male">Jácio Costa</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li><span class="male">João Hércules<small>Bisneto</small></span></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <div class="node-wrapper">
+                                                        <span class="female">Thalia da Silva</span>
+                                                        <span class="node-connector">+</span>
+                                                        <span class="male">Matyas Nandor</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="male">João Batista</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="female">Chiara Carla</span>
+                                            </div>
+                                            <ul>
+                                                <li><span class="female">Mikaelly Macedo<small>Neta</small></span></li>
+                                                <li><span class="male">Matthews Macedo<small>Neto</small></span></li>
+                                                <li><span class="female">Maísa Macedo<small>Neta</small></span></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="node-wrapper">
+                                                <span class="male">Vicente Severino</span>
+                                                <span class="node-connector">+</span>
+                                                <span class="female">Antônia Luciana</span>
+                                            </div>
+                                            <ul>
+                                                <li><span class="male">Victor Luan<small>Neto</small></span></li>
+                                                <li><span class="female">Maria Alice<small>Neta</small></span></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="ascendencia" class="conteudo-arvore">
+                        <div class="genealogy-list">
+                            <ul>
+                                <li><span class="highlight female">Maria Avelina de Sousa</span>
+                                    <ul>
+                                        <li><span class="male">João de Sousa Lima (Pai)</span>
+                                            <ul>
+                                                <li><span class="male">Raimundo Alves de Sousa (Avô)</span>
+                                                    <ul>
+                                                        <li><span class="male">Cap. Reinaldo Alves de Sousa (Bisavô)</span></li>
+                                                        <li><span class="female">Sebastiana M. da Conceição (Bisavó)</span></li>
+                                                    </ul>
+                                                </li>
+                                                <li><span class="female">Ana Vidal de Lima (Avó)</span>
+                                                    <ul>
+                                                        <li><span class="male">Francisco José de Lima (Bisavô)</span></li>
+                                                        <li><span class="female">Maria Vieira Cavalcante (Bisavó)</span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><span class="female">Maria do Carmo de Sousa (Mãe)</span>
+                                            <ul>
+                                                <li><span class="male">João da Silva Caldas (Avô)</span>
+                                                    <ul>
+                                                        <li><span class="male">Manoel da Silva Caldas (Bisavô)</span></li>
+                                                        <li><span class="female">Josefa Maria de Jesus (Bisavó)</span></li>
+                                                    </ul>
+                                                </li>
+                                                <li><span class="female">Maria Alves de Sousa (Avó)</span>
+                                                    <ul>
+                                                        <li><span class="male">Severo Alves de Sousa (Bisavô)</span></li>
+                                                        <li><span class="female">Maria Raimunda da Conceição (Bisavó)</span></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+
+    <script>
+        // Navegação mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Navegação suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    e.preventDefault(); // Impede o 'pulo' de links âncora vazios
+                    return;
+                }
+
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+
+                    // Fechar menu mobile se aberto
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+
+            // Timeline animation
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (itemTop < windowHeight * 0.8) {
+                    item.classList.add('visible');
+                }
+            });
+        });
+
+        // Alternar entre opções do livro
+        const opcaoBtns = document.querySelectorAll('.opcao-btn');
+        const conteudoLivros = document.querySelectorAll('.conteudo-livro');
+
+        opcaoBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover classe active de todos os botões
+                opcaoBtns.forEach(b => b.classList.remove('active'));
+                // Adicionar classe active ao botão clicado
+                btn.classList.add('active');
+
+                // Esconder todos os conteúdos
+                conteudoLivros.forEach(conteudo => {
+                    conteudo.classList.remove('active');
+                });
+
+                // Mostrar conteúdo correspondente
+                const target = btn.getAttribute('data-target');
+                if (target) {
+                    document.getElementById(target).classList.add('active');
+                }
+            });
+        });
+
+        // Alternar entre abas da Árvore
+        const arvoreBtns = document.querySelectorAll('.opcao-btn-arvore');
+        const conteudoArvores = document.querySelectorAll('.conteudo-arvore');
+
+        arvoreBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remover classe active de todos os botões
+                arvoreBtns.forEach(b => b.classList.remove('active'));
+                // Adicionar classe active ao botão clicado
+                btn.classList.add('active');
+
+                // Esconder todos os conteúdos
+                conteudoArvores.forEach(conteudo => {
+                    conteudo.classList.remove('active');
+                });
+
+                // Mostrar conteúdo correspondente
+                const target = btn.getAttribute('data-target');
+                if (target) {
+                    document.getElementById(target).classList.add('active');
+                }
+            });
+        });
+
+        // --- JavaScript do Panzoom (Dentro do Modal) ---
+        const treeContent = document.getElementById('tree-content');
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+        const resetButton = document.getElementById('reset-pan');
+
+        // Inicializa o Panzoom
+        const panzoom = Panzoom(treeContent, {
+            maxScale: 3,
+            minScale: 0.3,
+            contain: 'outside',
+            canvas: true // Melhora a performance em elementos grandes
+        });
+
+        // Conecta os botões
+        zoomInButton.addEventListener('click', () => panzoom.zoomIn());
+        zoomOutButton.addEventListener('click', () => panzoom.zoomOut());
+        resetButton.addEventListener('click', () => panzoom.reset());
+
+        // Habilita o zoom pela rodinha do mouse
+        const treeViewport = document.querySelector('.genealogy-tree');
+        treeViewport.addEventListener('wheel', panzoom.zoomWithWheel);
+
+
+        // --- Flipbook Modal ---
+        const flipbookModal = document.getElementById('flipbook-modal');
+        const openFlipbookBtn = document.getElementById('abrir-flipbook');
+        const closeFlipbookBtn = document.getElementById('close-flipbook');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const currentPageSpan = document.getElementById('current-page');
+        const totalPagesSpan = document.getElementById('total-pages');
+
+        const pages = document.querySelectorAll('.flipbook-page');
+        let currentPage = 0;
+        const totalPages = pages.length;
+
+        totalPagesSpan.textContent = totalPages;
+
+        // Abrir modal do flipbook
+        openFlipbookBtn.addEventListener('click', () => {
+            flipbookModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            showPage(currentPage);
+        });
+
+        // Fechar modal do flipbook
+        closeFlipbookBtn.addEventListener('click', () => {
+            flipbookModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fechar modal ao clicar fora do conteúdo
+        flipbookModal.addEventListener('click', (e) => {
+            if (e.target === flipbookModal) {
+                flipbookModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // --- NOVO: JavaScript do Modal da Genealogia ---
+        const genealogyModal = document.getElementById('genealogy-modal');
+        const openGenealogyBtn = document.getElementById('open-genealogy');
+        const closeGenealogyBtn = document.getElementById('close-genealogy');
+
+        // Abrir modal da genealogia
+        openGenealogyBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Impede o link '#' de pular a página
+            genealogyModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Força o panzoom a recalcular o tamanho e centralizar
+            panzoom.reset();
+
+            // Fecha o menu hamburger se estiver aberto
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Fechar modal da genealogia
+        closeGenealogyBtn.addEventListener('click', () => {
+            genealogyModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Fechar modal da genealogia ao clicar fora
+        genealogyModal.addEventListener('click', (e) => {
+            if (e.target === genealogyModal) {
+                genealogyModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+
+        // --- Navegação entre páginas do Flipbook ---
+        function showPage(pageIndex) {
+            pages.forEach((page, index) => {
+                if (index === pageIndex) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+
+            currentPage = pageIndex;
+            currentPageSpan.textContent = currentPage + 1;
+
+            // Atualizar estado dos botões
+            prevPageBtn.disabled = pageIndex === 0;
+            nextPageBtn.disabled = pageIndex === totalPages - 1;
+
+            // Rolar para o topo da página
+            document.querySelector('#flipbook-modal .flipbook-content').scrollTop = 0;
+        }
+
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                showPage(currentPage - 1);
+            }
+        });
+
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages - 1) {
+                showPage(currentPage + 1);
+            }
+        });
+
+        // --- ATUALIZADO: Navegação por teclado (para ambos os modais) ---
+        document.addEventListener('keydown', (e) => {
+            // Fecha qualquer modal aberto com 'Escape'
+            if (e.key === 'Escape') {
+                if (flipbookModal.classList.contains('active')) {
+                    flipbookModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                if (genealogyModal.classList.contains('active')) {
+                    genealogyModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            // Controla o flipbook com setas (apenas se ele estiver ativo)
+            if (flipbookModal.classList.contains('active')) {
+                if (e.key === 'ArrowLeft' && currentPage > 0) {
+                    showPage(currentPage - 1);
+                } else if (e.key === 'ArrowRight' && currentPage < totalPages - 1) {
+                    showPage(currentPage + 1);
+                }
+            }
+        });
+
+        // Navegação por rolagem do mouse (opcional)
+        const flipbookContent = document.querySelector('#flipbook-modal .flipbook-content');
+        let scrollTimeout;
+
+        flipbookContent.addEventListener('wheel', (e) => {
+            if (flipbookModal.classList.contains('active')) {
+                // Impede o scroll da árvore de acionar a paginação
+                if (e.target.closest('.genealogy-tree')) {
+                    return;
+                }
+
+                clearTimeout(scrollTimeout);
+
+                scrollTimeout = setTimeout(() => {
+                    const { scrollTop, scrollHeight, clientHeight } = flipbookContent;
+                    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 10;
+                    const isAtTop = scrollTop === 0;
+
+                    if (isAtBottom && e.deltaY > 0 && currentPage < totalPages - 1) {
+                        showPage(currentPage + 1);
+                    } else if (isAtTop && e.deltaY < 0 && currentPage > 0) {
+                        showPage(currentPage - 1);
+                    }
+                }, 100);
+            }
+        });
+
+        // Índice onomástico - busca
+        const buscaInput = document.getElementById('indice-busca');
+        const indiceItens = document.querySelectorAll('.indice-item');
+
+        buscaInput.addEventListener('input', () => {
+            const termo = buscaInput.value.toLowerCase();
+
+            indiceItens.forEach(item => {
+                const texto = item.textContent.toLowerCase();
+                if (texto.includes(termo)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Índice onomástico - detalhes
+        const detalhesContainer = document.getElementById('indice-detalhes');
+        const detalhesNome = document.getElementById('detalhes-nome');
+        const detalhesConteudo = document.getElementById('detalhes-conteudo');
+
+        // Dados das pessoas (em um caso real, viriam de uma base de dados)
+        const pessoasData = {
+            avelina: {
+                nome: "Maria Avelina de Sousa",
+                info: "Nascida em 10 de novembro de 1935 em Barbalha. Filha de João de Sousa Lima (Pai João) e Maria do Carmo de Sousa. Casou-se com Raimundo Severino de Sousa (Abel) em 28 de novembro de 1956. Teve 8 filhos: Maria do Rosário, José Zilton, Antônio Severino, Maria do Socorro, Francisco de Assis, Severino Neto, João Batista e Vicente Severino."
+            },
+            abel: {
+                nome: "Raimundo Severino de Sousa (Abel)",
+                info: "Esposo de Maria Avelina. Filho de Severino Saraiva de Sousa (Pai Senhor) e Maria de Sousa Lima (Mãe Maria). Casou-se com Avelina em 28 de novembro de 1956. Faleceu em 29 de junho de 2016."
+            },
+            reinaldo: {
+                nome: "Capitão Reinaldo Alves de Sousa",
+                info: "Patriarca da família. Nascido em 7 de maio de 1840. Casou-se três vezes: com Sebastiana Maria da Conceição (com quem teve 6 filhos), com Silvana Gonçalves de Sousa (com quem teve 1 filho) e com Ana Maria da Conceição (com quem teve 6 filhos). Faleceu em 27 de novembro de 1910."
+            }
+            // Outras pessoas podem ser adicionadas aqui
+        };
+
+        indiceItens.forEach(item => {
+            item.addEventListener('click', () => {
+                const pessoaId = item.getAttribute('data-person');
+                const pessoaData = pessoasData[pessoaId];
+
+                if (pessoaData) {
+                    detalhesNome.textContent = pessoaData.nome;
+                    detalhesConteudo.innerHTML = `<p>${pessoaData.info}</p>`;
+                    detalhesContainer.classList.add('active');
+                } else {
+                    detalhesNome.textContent = item.textContent;
+                    detalhesConteudo.innerHTML = `<p>Informações detalhadas sobre ${item.textContent} serão adicionadas em breve.</p>`;
+                    detalhesContainer.classList.add('active');
+                }
+
+                // Rolagem suave para os detalhes
+                detalhesContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+
+        // Inicializar primeira página do flipbook
+        showPage(0);
+    </script>
+</body>
+</html>
